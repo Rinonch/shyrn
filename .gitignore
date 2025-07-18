@@ -1,0 +1,30 @@
+# Development files
+.vscode/
+.env
+*.log
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.tmp
+*~
+
+# Local server files (not needed for GitHub Pages)
+.htaccess
+
+# IDE files
+*.swp
+*.swo
+.idea/
+*.sublime-*
+
+# Temporary files
+temp/
+tmp/

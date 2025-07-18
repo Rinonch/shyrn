@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Security Headers -->
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+
+        <!-- Content Security Policy -->
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+
+        <title>Shyrn - Urban Exploration & Adventure</title>
+        <meta name="description"
+            content="Welcome to Shyrn - Urban exploration and adventure stories, uncaptured moments from forgotten places and extraordinary journeys">
+        <meta name="keywords" content="urban exploration, adventure, travel, journey, exploration, shyrn, home">
+        <meta name="author" content="Shyrn">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="format-detection" content="telephone=no">
+
+        <!-- DNS Prefetch for performance -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+        <!-- Preload critical resources -->
+        <link rel="preload" href="css/style.css" as="style">
+        <link rel="preload" href="js/script.js" as="script">
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            as="style">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://shyrn.com/">
+        <meta property="og:title" content="Shyrn - Urban Exploration & Adventure">
+        <meta property="og:description"
+            content="Welcome to Shyrn - Urban exploration and adventure stories, uncaptured moments from forgotten places and extraordinary journeys">
+        <meta property="og:image" content="images/og-image.jpg">
+        <meta property="og:site_name" content="Shyrn">
+        <meta property="og:locale" content="en_US">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://shyrn.com/">
+        <meta property="twitter:title" content="Shyrn - Urban Exploration & Adventure">
+        <meta property="twitter:description"
+            content="Urban exploration and adventure blog - uncaptured moments and journey stories">
+        <meta property="twitter:image" content="images/og-image.jpg">
+        <meta property="twitter:creator" content="@shyrnfreedom">
+
+        <!-- PWA -->
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#ff4444">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Shyrn Blog">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Favicon and Icons -->
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="apple-touch-icon" href="images/icon-192.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/icon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/icon-180.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="images/icon-167.png">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://shyrn.com/blog">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Shyrn Blog",
+            "description": "Urban exploration and adventure blog - uncaptured moments and journey stories",
+            "url": "https://shyrn.com/blog",
+            "author": {
+                "@type": "Person",
+                "name": "Shyrn"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Shyrn",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://shyrn.com/images/logo.png"
+                }
+            }
+        }
+        </script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/">
+                            <svg class="logo-svg" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 32C8 32 12 28 20 28C28 28 32 32 32 32" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <path d="M8 20C8 20 12 16 20 16C28 16 32 20 32 20" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <path d="M8 8C8 8 12 4 20 4C28 4 32 8 32 8" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <text x="45" y="22" fill="white" font-family="Inter" font-size="16"
+                                    font-weight="500">shyrn.com</text>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Navigation -->
+                    <nav class="nav">
+                        <a href="/projects" class="nav-link">PROJECTS</a>
+                        <a href="/blog" class="nav-link">BLOG</a>
+                    </nav>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="http://youtube.com/shyrn" target="_blank" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="http://instagram.com/shyrnfreedom" target="_blank" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/shyrnfreedom" target="_blank" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="http://reddit.com/r/shyrn" target="_blank" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content" class="main">
+            <div class="container">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <h1 class="welcome-title">Welcome to Shyrn</h1>
+                    <p class="welcome-subtitle">Urban exploration and adventure stories - uncaptured moments from the
+                        journey</p>
+                </section>
+
+                <!-- Latest Content Grid -->
+                <section class="latest-content">
+                    <!-- Latest Blog Post -->
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Latest Blog Post</h2>
+                            <a href="/blog" class="section-link">View All Posts →</a>
+                        </div>
+                        <article class="featured-post">
+                            <a href="/blog/uncaptured-moments-enter-and-escape-mission-to-guarded-factory-complex"
+                                class="post-link">
+                                <div class="post-image">
+                                    <img src="images/escape-poster.jpg"
+                                        alt="Uncaptured Moments: Enter & Escape Mission To Guarded Factory Complex"
+                                        loading="lazy">
+                                </div>
+                                <div class="post-content">
+                                    <time class="post-date">4/26/25</time>
+                                    <h3 class="post-title">Uncaptured Moments: Enter & Escape Mission To Guarded Factory
+                                        Complex</h3>
+                                    <p class="post-excerpt">A daring exploration into an abandoned industrial complex,
+                                        navigating security and uncovering forgotten industrial heritage.</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- Latest Project -->
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Latest Project</h2>
+                            <a href="/projects" class="section-link">View All Projects →</a>
+                        </div>
+                        <article class="featured-post">
+                            <a href="/projects/urban-exploration-documentary-series" class="post-link">
+                                <div class="post-image">
+                                    <img src="images/documentary-project.svg" alt="Urban Exploration Documentary Series"
+                                        loading="lazy">
+                                </div>
+                                <div class="post-content">
+                                    <time class="post-date">7/15/25</time>
+                                    <h3 class="post-title">Urban Exploration Documentary Series</h3>
+                                    <p class="post-excerpt">A comprehensive documentary project capturing the essence of
+                                        urban exploration and forgotten places across Europe.</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="copyright">Ⓒ 2025 Shyrn</p>
+                    <div class="footer-links">
+                        <a href="/projects">PROJECTS</a>
+                        <a href="/blog">BLOG</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+
+</html>

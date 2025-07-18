@@ -1,0 +1,67 @@
+# Konfigurasi GitHub Pages untuk Shyrn Blog
+
+# Informasi dasar website
+title: "Shyrn - Personal Blog & Projects"
+description: "Website modern dengan tema gelap menampilkan blog dan proyek terbaru"
+baseurl: "" # Kosongkan untuk user pages atau isi dengan nama repo untuk project pages
+url: "https://your-username.github.io" # Ganti dengan URL GitHub Pages Anda
+
+# Informasi penulis
+author:
+  name: "Shyrn"
+  email: "your-email@example.com"
+  github: "your-username"
+
+# Pengaturan build GitHub Pages
+markdown: kramdown
+highlighter: rouge
+incremental: false
+
+# Timezone
+timezone: Asia/Jakarta
+
+# Plugin untuk GitHub Pages
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# File yang disertakan
+include:
+  - _config.yml
+  - README.md
+  - LICENSE
+  - DEPLOYMENT.md
+
+# File yang dikecualikan
+exclude:
+  - .htaccess
+  - .vscode/
+  - deploy.bat
+  - "*.log"
+  - "*.tmp"
+  - .env
+  - node_modules/
+  - .git/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+# Kompresi HTML untuk performa
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
+  blank_lines: false
+
+# Pengaturan permalink
+permalink: pretty
+
+# Pengaturan keamanan (dihandle otomatis oleh GitHub Pages)
+webrick:
+  headers:
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: "1; mode=block"

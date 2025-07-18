@@ -1,0 +1,29 @@
+<!-- Placeholder SVG for Documentary Project -->
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#333;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" fill="url(#bg)"/>
+  
+  <!-- Film camera icon -->
+  <g transform="translate(150, 90)">
+    <rect x="10" y="30" width="80" height="50" rx="5" fill="#ff4444" opacity="0.8"/>
+    <rect x="5" y="25" width="90" height="60" rx="8" fill="none" stroke="#ff4444" stroke-width="2"/>
+    <circle cx="50" cy="55" r="15" fill="none" stroke="#ff4444" stroke-width="2"/>
+    <circle cx="50" cy="55" r="8" fill="#ff4444" opacity="0.6"/>
+    <rect x="90" y="40" width="15" height="30" rx="3" fill="#ff4444" opacity="0.5"/>
+    <rect x="20" y="15" width="8" height="8" rx="2" fill="#ff4444"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="160" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">Documentary Project</text>
+  <text x="200" y="180" font-family="Inter, sans-serif" font-size="12" fill="#999" text-anchor="middle">Urban Exploration Series</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="50" cy="50" r="2" fill="#ff4444" opacity="0.3"/>
+  <circle cx="350" cy="230" r="3" fill="#ff4444" opacity="0.2"/>
+  <circle cx="30" cy="200" r="1.5" fill="#ff4444" opacity="0.4"/>
+</svg>
