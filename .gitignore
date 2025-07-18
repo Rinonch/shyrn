@@ -28,3 +28,6 @@ desktop.ini
 # Temporary files
 temp/
 tmp/
+
+# Unused folders
+blog/

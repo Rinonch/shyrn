@@ -1,45 +1,48 @@
-// Enhanced Service Worker with Security & Performance Features
-const CACHE_VERSION = 'shyrn-blog-v2.1';
+// Enhanced Service Worker for GitHub Pages
+const CACHE_VERSION = 'shyrn-blog-v3.0';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 const IMAGES_CACHE = `${CACHE_VERSION}-images`;
 
-// Cache configuration with security headers
+// Get base URL for GitHub Pages
+const getBaseUrl = () => {
+    if (self.location.hostname === 'localhost' || self.location.hostname === '127.0.0.1') {
+        return '';
+    }
+    // For GitHub Pages: https://username.github.io/repo-name
+    const pathSegments = self.location.pathname.split('/').filter(segment => segment);
+    return pathSegments.length > 0 ? `/${pathSegments[0]}` : '';
+};
+
+const BASE_URL = getBaseUrl();
+
+// Cache configuration
 const CACHE_CONFIG = {
     maxEntries: 50,
     maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
-    networkTimeoutSeconds: 5,
-    cacheableResponse: {
-        statuses: [0, 200],
-        headers: {
-            'X-Cacheable': 'true'
-        }
-    }
+    networkTimeoutSeconds: 5
 };
 
-// Files to cache on install with integrity verification
+// Files to cache on install - with proper GitHub Pages paths
 const CORE_CACHE_FILES = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/js/script.js',
-    '/manifest.json',
-    '/images/shyrn-logo.svg',
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'
+    `${BASE_URL}/`,
+    `${BASE_URL}/index.html`,
+    `${BASE_URL}/blog.html`,
+    `${BASE_URL}/css/style.css`,
+    `${BASE_URL}/js/script.js`,
+    `${BASE_URL}/manifest.json`,
+    `${BASE_URL}/favicon.svg`,
+    `${BASE_URL}/images/documentary-project.svg`,
+    `${BASE_URL}/images/escape-poster.svg`
 ];
 
-// Security headers for cached responses
+// Security headers for GitHub Pages
 const SECURITY_HEADERS = {
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'DENY',
-    'X-XSS-Protection': '1; mode=block',
-    'Referrer-Policy': 'strict-origin-when-cross-origin',
-    'Permissions-Policy': 'geolocation=(), microphone=(), camera=()',
-    'Cross-Origin-Embedder-Policy': 'require-corp',
-    'Cross-Origin-Opener-Policy': 'same-origin'
+    'Referrer-Policy': 'strict-origin-when-cross-origin'
 };
 
-// Cache strategies with security validation
+// Cache strategies
 class CacheStrategy {
     static async cacheFirst(request, cacheName) {
         try {

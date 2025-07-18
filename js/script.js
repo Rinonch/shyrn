@@ -77,13 +77,21 @@
         }
     }
 
-    // Modern: Service Worker registration with error handling
+    // Modern: Service Worker registration with GitHub Pages support
     class ServiceWorkerManager {
         static async register() {
             if ('serviceWorker' in navigator) {
                 try {
-                    const registration = await navigator.serviceWorker.register('/sw.js', {
-                        scope: '/'
+                    // Get the correct path for GitHub Pages
+                    const baseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                        ? '' 
+                        : window.location.pathname.split('/').slice(0, 2).join('/');
+                    
+                    const swPath = `${baseUrl}/sw.js`;
+                    const scope = `${baseUrl}/`;
+                    
+                    const registration = await navigator.serviceWorker.register(swPath, {
+                        scope: scope
                     });
 
                     registration.addEventListener('updatefound', () => {
@@ -96,7 +104,7 @@
                         });
                     });
 
-                    console.log('ServiceWorker registered successfully');
+                    console.log('ServiceWorker registered successfully', registration);
                     return registration;
                 } catch (error) {
                     console.error('ServiceWorker registration failed:', error);
@@ -309,8 +317,8 @@
         }
 
         handleImageError(img) {
-            // Fallback image
-            img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNDAiIGZpbGw9IiMxYTFhMWEiLz48dGV4dCB4PSIyMDAiIHk9IjEyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzY2NjY2NiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXNpemU9IjE0Ij5JbWFnZSBub3QgZm91bmQ8L3RleHQ+PC9zdmc+';
+            // Fallback to local placeholder
+            img.src = './images/documentary-project.svg';
             img.classList.add('loaded', 'error');
         }
     }
@@ -449,11 +457,132 @@
         }
     });
 
+    // Projects data
+    const projectsData = [
+        {
+            id: 1,
+            title: "Documentary Project",
+            description: "Urban exploration documentary series capturing the hidden stories of abandoned places and forgotten architecture.",
+            date: "2025-07-15",
+            image: "./images/documentary-project.svg",
+            tags: ["documentary", "urban exploration", "photography"],
+            status: "ongoing",
+            location: "Various European Cities"
+        },
+        {
+            id: 2,
+            title: "Rooftop Chronicles",
+            description: "A photographic journey across cityscapes, documenting the view from above and the stories written in concrete and steel.",
+            date: "2025-06-20",
+            image: "./images/escape-poster.svg",
+            tags: ["photography", "rooftop", "cityscape"],
+            status: "completed",
+            location: "Berlin, Germany"
+        },
+        {
+            id: 3,
+            title: "Underground Networks",
+            description: "Exploring the hidden infrastructure beneath our feet - tunnels, bunkers, and forgotten passages that tell the story of urban development.",
+            date: "2025-05-10",
+            image: "./images/documentary-project.svg",
+            tags: ["exploration", "underground", "infrastructure"],
+            status: "planned",
+            location: "Prague, Czech Republic"
+        }
+    ];
+
+    // Projects loader
+    function loadProjects() {
+        const projectsGrid = document.getElementById('projectsGrid');
+        if (!projectsGrid) return;
+
+        projectsGrid.innerHTML = '';
+
+        projectsData.forEach(project => {
+            const projectCard = createProjectCard(project);
+            projectsGrid.appendChild(projectCard);
+        });
+
+        // Trigger lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            const lazyImages = projectsGrid.querySelectorAll('img[data-src]');
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+    }
+
+    function createProjectCard(project) {
+        const article = document.createElement('article');
+        article.className = 'project-card';
+        article.innerHTML = `
+            <div class="project-image">
+                <img data-src="${project.image}" alt="${project.title}" loading="lazy" class="lazy">
+                <div class="project-status ${project.status}">${project.status}</div>
+            </div>
+            <div class="project-content">
+                <div class="project-meta">
+                    <time class="project-date">${formatDate(project.date)}</time>
+                    <span class="project-location">${project.location}</span>
+                </div>
+                <h2 class="project-title">${project.title}</h2>
+                <p class="project-description">${project.description}</p>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+        `;
+        return article;
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric', 
+            year: '2-digit' 
+        });
+    }
+
+    // Navigation handling
+    function initNavigation() {
+        // Update active nav state based on current page
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            
+            if (currentPath.includes('projects') && href.includes('projects')) {
+                link.classList.add('active');
+            } else if (currentPath.includes('blog') && href.includes('blog')) {
+                link.classList.add('active');
+            } else if ((currentPath === '/' || currentPath.includes('index')) && href === './') {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Initialize navigation on page load
+    document.addEventListener('DOMContentLoaded', initNavigation);
+
     // Export for global access if needed
     window.BlogApp = {
         search: BlogSearch,
         errorHandler: ErrorHandler,
-        version: '2.0.0'
+        loadProjects: loadProjects,
+        initNavigation: initNavigation,
+        version: '3.0.0'
     };
 
 })();
