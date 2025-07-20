@@ -1,0 +1,8 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="630" fill="#0a0a0a"/>
+<path d="M100 400C100 400 140 360 200 360C260 360 300 400 300 400" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path d="M100 340C100 340 140 300 200 300C260 300 300 340 300 340" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path d="M100 280C100 280 140 240 200 240C260 240 300 280 300 280" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<text x="400" y="320" fill="white" font-family="Inter, sans-serif" font-size="48" font-weight="600">Shyrn</text>
+<text x="400" y="370" fill="#999" font-family="Inter, sans-serif" font-size="24">Urban Exploration & Adventure</text>
+</svg>

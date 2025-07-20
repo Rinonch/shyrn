@@ -1,0 +1,10 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="450" fill="#1a1a1a"/>
+<rect x="50" y="50" width="700" height="350" rx="10" fill="#2a2a2a"/>
+<path d="M150 200L300 150L450 250L600 180L750 220" stroke="#ff4444" stroke-width="3"/>
+<circle cx="200" cy="150" r="15" fill="#ff4444"/>
+<circle cx="350" cy="200" r="15" fill="#ff4444"/>
+<circle cx="500" cy="180" r="15" fill="#ff4444"/>
+<text x="400" y="300" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="24" font-weight="600">ESCAPE MISSION</text>
+<text x="400" y="330" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="16">Factory Complex Exploration</text>
+</svg>
