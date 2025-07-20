@@ -1,41 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+
     <title>Projects - Shyrn</title>
-    <meta name="description" content="Urban exploration projects and documentary series by Shyrn">
-    <meta name="keywords" content="urban exploration, projects, documentary, Shyrn">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Projects - Shyrn">
-    <meta property="og:description" content="Urban exploration projects and documentary series by Shyrn">
-    <meta property="og:url" content="https://shyrn.com/projects">
+    <meta name="description"
+        content="Urban exploration projects and documentary series - innovative initiatives in forgotten places exploration">
+    <meta name="keywords" content="urban exploration, projects, documentary, Shyrn, exploration series, architecture">
+    <meta name="author" content="Shyrn">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- DNS Prefetch for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shyrn.com/projects">
+    <meta property="og:title" content="Projects - Shyrn">
+    <meta property="og:description"
+        content="Urban exploration projects and documentary series - innovative initiatives in forgotten places exploration">
     <meta property="og:image" content="images/og-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <!-- Styles -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    
+    <meta property="og:site_name" content="Shyrn">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shyrn.com/projects">
+    <meta property="twitter:title" content="Projects - Shyrn">
+    <meta property="twitter:description"
+        content="Urban exploration projects and documentary series - innovative initiatives in forgotten places exploration">
+    <meta property="twitter:image" content="images/og-image.jpg">
+    <meta property="twitter:creator" content="@shyrnfreedom">
+
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ff4444">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Shyrn Projects">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon-180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/icon-167.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shyrn.com/projects">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Shyrn Projects",
+        "description": "Urban exploration projects and documentary series - innovative initiatives in forgotten places exploration",
+        "url": "https://shyrn.com/projects",
+        "author": {
+            "@type": "Person",
+            "name": "Shyrn"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Shyrn",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://shyrn.com/images/logo.png"
+            }
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -61,72 +126,125 @@
 
                 <!-- Navigation -->
                 <nav class="nav">
+                    <a href="/videos" class="nav-link">VIDEOS</a>
                     <a href="/projects" class="nav-link active">PROJECTS</a>
                     <a href="/blog" class="nav-link">BLOG</a>
                 </nav>
 
                 <!-- Social Links -->
                 <div class="social-links">
-                    <a href="http://youtube.com/shyrn" target="_blank" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
-                    <a href="http://instagram.com/shyrnfreedom" target="_blank" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/shyrnfreedom" target="_blank" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                        </svg>
-                    </a>
+                    <a href="http://youtube.com/shyrn" target="_blank" class="social-link">YouTube</a>
+                    <a href="http://instagram.com/shyrnfreedom" target="_blank" class="social-link">Instagram</a>
+                    <a href="https://twitter.com/shyrnfreedom" target="_blank" class="social-link">Twitter</a>
+                    <a href="http://reddit.com/r/shyrn" target="_blank" class="social-link">Reddit</a>
+                    <a href="https://patreon.com/shyrn" target="_blank" class="support-link">SUPPORT FOR $1</a>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+
     <!-- Main Content -->
     <main id="main-content" class="main">
         <div class="container">
-            <!-- Page Header -->
-            <section class="page-header">
-                <h1 class="page-title">Projects</h1>
-                <p class="page-subtitle">Urban exploration projects and documentary series</p>
+            <!-- Latest Project -->
+            <section class="latest-content">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Latest Project</h2>
+                    </div>
+                    <article class="featured-post">
+                        <a href="/projects/urban-exploration-documentary-series" class="post-link">
+                            <div class="post-image">
+                                <img src="images/documentary-project.svg" alt="Urban Exploration Documentary Series"
+                                    loading="lazy">
+                            </div>
+                            <div class="post-content">
+                                <time class="post-date">7/15/25</time>
+                                <h3 class="post-title">Urban Exploration Documentary Series</h3>
+                            </div>
+                        </a>
+                    </article>
+                </div>
             </section>
 
-            <!-- Projects Grid -->
-            <section class="blog-grid">
-                <article class="blog-post">
-                    <div class="post-content">
-                        <h2 class="post-title">Urban Exploration Documentary Series</h2>
-                        <p class="post-excerpt">A comprehensive documentary project capturing the essence of urban exploration and forgotten places across Europe.</p>
-                        <div class="post-status">
-                            <span class="status-badge status-active">In Progress</span>
-                        </div>
-                    </div>
-                </article>
+            <!-- All Projects -->
+            <section class="all-projects">
+                <div class="projects-list">
+                    <article class="project-item">
+                        <a href="/projects/forgotten-places-archive" class="project-link">
+                            <div class="project-image">
+                                <img src="images/escape-poster.jpg" alt="Forgotten Places Archive" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <time class="project-date">6/20/25</time>
+                                <h3 class="project-name">Forgotten Places Archive</h3>
+                            </div>
+                        </a>
+                    </article>
 
-                <article class="blog-post">
-                    <div class="post-content">
-                        <h2 class="post-title">Forgotten Places Archive</h2>
-                        <p class="post-excerpt">A digital archive documenting abandoned locations, industrial heritage, and urban decay across multiple countries.</p>
-                        <div class="post-status">
-                            <span class="status-badge status-planned">Planned</span>
-                        </div>
-                    </div>
-                </article>
+                    <article class="project-item">
+                        <a href="/projects/interactive-map" class="project-link">
+                            <div class="project-image">
+                                <img src="images/nuclear-plant.jpg" alt="Interactive Exploration Map" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <time class="project-date">5/10/25</time>
+                                <h3 class="project-name">Interactive Exploration Map</h3>
+                            </div>
+                        </a>
+                    </article>
 
-                <article class="blog-post">
-                    <div class="post-content">
-                        <h2 class="post-title">Interactive Map Project</h2>
-                        <p class="post-excerpt">An interactive map showcasing explored locations with stories, photos, and historical context.</p>
-                        <div class="post-status">
-                            <span class="status-badge status-planned">Planned</span>
-                        </div>
-                    </div>
-                </article>
+                    <article class="project-item">
+                        <a href="/projects/safety-guide" class="project-link">
+                            <div class="project-image">
+                                <img src="images/gear-list.jpg" alt="Exploration Safety Guide" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <time class="project-date">4/15/25</time>
+                                <h3 class="project-name">Exploration Safety Guide</h3>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-item">
+                        <a href="/projects/photography-exhibition" class="project-link">
+                            <div class="project-image">
+                                <img src="images/montenegro-journey.jpg" alt="Urban Decay Photography" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <time class="project-date">3/22/25</time>
+                                <h3 class="project-name">Urban Decay Photography Exhibition</h3>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-item">
+                        <a href="/projects/historical-research" class="project-link">
+                            <div class="project-image">
+                                <img src="images/adriatic-cycling.jpg" alt="Historical Research Initiative" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <time class="project-date">2/28/25</time>
+                                <h3 class="project-name">Historical Research Initiative</h3>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-item">
+                        <a href="/projects/community-platform" class="project-link">
+                            <div class="project-image">
+                                <img src="images/website-launch.jpg" alt="Community Platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <time class="project-date">1/12/25</time>
+                                <h3 class="project-name">Community Platform</h3>
+                            </div>
+                        </a>
+                    </article>
+                </div>
             </section>
         </div>
     </main>
@@ -135,11 +253,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="copyright">Ⓒ 2025 Shyrn</p>
-                <div class="footer-links">
-                    <a href="/projects">PROJECTS</a>
-                    <a href="/blog">BLOG</a>
-                </div>
+                <p class="copyright">Ⓒ 2025 shyrn</p>
             </div>
         </div>
     </footer>
