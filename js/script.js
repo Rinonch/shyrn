@@ -1,6 +1,26 @@
 // Modern Blog JavaScript with Security & Performance Enhancements
 'use strict';
 
+// Clear console when script loads
+console.clear();
+
+// Add error handling for resource loading
+window.addEventListener('error', function(e) {
+    if (e.target.tagName === 'LINK' && e.target.href.includes('fonts.googleapis.com')) {
+        console.log('Font loading failed, using system fonts');
+        e.preventDefault();
+    }
+});
+
+// Listen for service worker messages
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.addEventListener('message', function(event) {
+        if (event.data && event.data.type === 'CLEAR_CONSOLE') {
+            console.clear();
+        }
+    });
+}
+
 // Security: Prevent global namespace pollution
 (function () {
     // Security: Input sanitization function

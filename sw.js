@@ -304,8 +304,21 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Enhanced fetch handler with security and performance
-self.addEventListener('fetch', (event) => {
+// Add proper error handling for font loading
+self.addEventListener('fetch', event => {
+    // Skip Google Fonts requests that might cause CORS issues
+    if (event.request.url.includes('fonts.googleapis.com') || 
+        event.request.url.includes('fonts.gstatic.com')) {
+        event.respondWith(
+            fetch(event.request, { mode: 'cors' }).catch(() => {
+                console.log('Font loading failed, using fallback');
+                return new Response('', { status: 200 });
+            })
+        );
+        return;
+    }
+    
+    // Handle other requests
     const { request } = event;
     const url = new URL(request.url);
 
